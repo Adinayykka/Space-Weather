@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Weather - SAGA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SAGA Development Team Branding -->
+    <div class="saga-branding">SAGA</div>
+
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="screen active">
+        <div class="space-background">
+            <!-- NASA Space Weather Background Layers -->
+            <div class="background-layer nebula-layer"></div>
+            <div class="background-layer solar-flare-layer"></div>
+            <div class="background-layer starfield-layer"></div>
+            <div class="background-layer cosmic-dust-layer"></div>
+            
+            <!-- Animated Elements -->
+            <div class="stars"></div>
+            <div class="nebula"></div>
+            <div class="galaxy"></div>
+            <div class="solar-wind"></div>
+        </div>
+        
+        <!-- Lens Flare Effect -->
+        <div class="lens-flare"></div>
+        
+        <div class="intro-content">
+            <h1 class="game-title">
+                <span class="title-line">SPACE</span>
+                <span class="title-line">WEATHER</span>
+            </h1>
+            <div class="subtitle">A Cosmic Journey Awaits</div>
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <!-- Particle System -->
+        <div class="particle-system"></div>
+    </div>
+
+    <!-- Main Menu Screen -->
+    <div id="main-menu" class="screen">
+        <div class="space-background">
+            <!-- NASA Space Weather Background Layers -->
+            <div class="background-layer nebula-layer"></div>
+            <div class="background-layer solar-flare-layer"></div>
+            <div class="background-layer starfield-layer"></div>
+            <div class="background-layer cosmic-dust-layer"></div>
+            
+            <!-- Animated Elements -->
+            <div class="stars"></div>
+            <div class="nebula"></div>
+            <div class="galaxy"></div>
+            <div class="solar-wind"></div>
+        </div>
+        
+        <!-- Shader Overlay -->
+        <div class="shader-overlay"></div>
+        
+        <div class="menu-content">
+            <h2 class="menu-title">SPACE WEATHER</h2>
+            <div class="menu-buttons">
+                <button class="menu-btn" data-action="start">
+                    <div class="btn-bg"></div>
+                    <span class="btn-text">START</span>
+                    <div class="btn-glow"></div>
+                    <div class="btn-particles"></div>
+                </button>
+                <button class="menu-btn" data-action="directory">
+                    <div class="btn-bg"></div>
+                    <span class="btn-text">DIRECTORY</span>
+                    <div class="btn-glow"></div>
+                    <div class="btn-particles"></div>
+                </button>
+                <button class="menu-btn" data-action="information">
+                    <div class="btn-bg"></div>
+                    <span class="btn-text">INFORMATION</span>
+                    <div class="btn-glow"></div>
+                    <div class="btn-particles"></div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Particle System -->
+        <div class="particle-system"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

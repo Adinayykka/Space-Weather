@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Weather - Educational Game</title>
+    <link rel="stylesheet" href="game-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SAGA Branding -->
+    <div class="saga-branding">SAGA</div>
+
+    <!-- Menu Button -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="close-menu">×</button>
+            </div>
+            <div class="menu-items">
+                <a href="#" class="menu-item" data-scene="home">
+                    <span class="menu-icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="menu-item" data-scene="directory">
+                    <span class="menu-icon">📘</span>
+                    <span>Directory</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div class="game-container">
+        <!-- Splash Screen -->
+        <div id="splash-screen" class="screen active">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="nebula"></div>
+                <div class="galaxy"></div>
+            </div>
+            <div class="intro-content">
+                <h1 class="game-title">SPACE WEATHER</h1>
+                <p class="game-subtitle">Press any key or click to begin</p>
+            </div>
+        </div>
+        <!-- Intro Screen -->
+        <div id="intro-screen" class="screen">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="nebula"></div>
+                <div class="galaxy"></div>
+            </div>
+            <div class="intro-content">
+                <h1 class="game-title">SPACE WEATHER</h1>
+                <p class="game-subtitle">An Educational Journey Through Space Weather</p>
+                <div class="registration-form">
+                    <h3>Enter Your Information</h3>
+                    <input type="text" id="player-name" placeholder="First Name" required>
+                    <input type="text" id="player-surname" placeholder="Last Name" required>
+                    <select id="player-gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button class="start-btn" id="start-game">Start Mission</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu Screen -->
+        <div id="main-menu" class="screen">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="nebula"></div>
+                <div class="galaxy"></div>
+            </div>
+            <div class="menu-content">
+                <h2 class="menu-title">SPACE WEATHER</h2>
+                <div class="menu-buttons">
+                    <button class="menu-btn" data-action="start">Start</button>
+                    <button class="menu-btn" data-action="directory">Directory</button>
+                    <button class="menu-btn" data-action="information">Information</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cinematic Video Screen: What is Space Weather? -->
+        <div id="video-screen" class="screen">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="nebula"></div>
+            </div>
+            <div class="cinematic">
+                <div class="cinematic-overlay"></div>
+                <div class="cinematic-media">
+                    <!-- Replace src with NASA/NOAA hosted MP4 if available; using placeholder structure -->
+                    <video id="introVideo" class="cinematic-video" autoplay muted playsinline></video>
+                    <iframe id="introYouTube" class="cinematic-video" style="display:none;" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                    <div class="cinematic-fallback">
+                        <div class="sun-hero">
+                            <div class="sun-core"></div>
+                            <div class="sun-flare"></div>
+                            <div class="sun-cme"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinematic-caption">
+                    <h2>What is Space Weather?</h2>
+                    <p>Solar flares and CMEs interact with Earth’s magnetosphere, affecting satellites, GPS, radio, and power grids.</p>
+                    <button class="continue-btn" id="continue-to-story">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story Scenes -->
+        <div id="story-screen" class="screen">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="nebula"></div>
+                <div class="galaxy"></div>
+            </div>
+            
+            <!-- Scene 1: Astronaut -->
+            <div id="scene-1" class="story-scene active">
+                <div class="scene-header">
+                    <h2>Chapter 1: The Astronaut's Dilemma</h2>
+                    <div class="scene-progress">1/5</div>
+                </div>
+                <div class="scene-content">
+                    <div class="novel-text">
+                        <div class="story-narrative">
+                            <p class="story-paragraph">The International Space Station hums quietly as you float through the module, your recorder ready. Commander Sarah Chen, a veteran astronaut with three spacewalks under her belt, greets you with a warm smile. "Welcome to our home in the stars," she says, gesturing to the panoramic view of Earth below.</p>
+                            
+                            <p class="story-paragraph">"Commander Chen, thank you for taking the time to speak with me about space weather," you begin. "As a journalist, I'm investigating how solar activity affects different professions. What's it like up here when the Sun gets active?"</p>
+                            
+                            <p class="story-paragraph">Before she can answer, the station's alarm system suddenly blares to life. Red warning lights flash throughout the module. "Solar flare alert!" Commander Chen's voice is urgent but controlled. "We need to get to the storm shelter immediately."</p>
+                            
+                            <p class="story-paragraph">As you both float toward the most protected part of the station, she explains: "When the Sun releases a coronal mass ejection, billions of tons of charged particles race toward Earth at millions of miles per hour. If we're caught in the open, the radiation could be deadly."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="character-info">
+                        <div class="character-avatar">👨‍🚀</div>
+                        <div class="character-details">
+                            <h3>Commander Sarah Chen</h3>
+                            <p>International Space Station</p>
+                            <p class="character-bio">"I've been in space for 6 months. Every solar storm is a reminder of how vulnerable we are up here."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mini-game">
+                        <h4>Interactive Simulation: Solar Flare Formation</h4>
+                        <p class="game-instruction">Click on the charged particles around the Sun to accelerate them and trigger a Coronal Mass Ejection (CME). Watch as the solar wind races toward Earth!</p>
+                        <div class="sun-container">
+                            <div class="sun" id="sun">
+                                <div class="solar-surface"></div>
+                                <div class="atom" data-atom="1" style="top: 20%; left: 30%;"></div>
+                                <div class="atom" data-atom="2" style="top: 40%; left: 60%;"></div>
+                                <div class="atom" data-atom="3" style="top: 60%; left: 20%;"></div>
+                                <div class="atom" data-atom="4" style="top: 70%; left: 70%;"></div>
+                                <div class="atom" data-atom="5" style="top: 30%; left: 80%;"></div>
+                            </div>
+                            <div class="earth-target">
+                                <div class="earth">🌍</div>
+                                <div class="impact-zone"></div>
+                            </div>
+                        </div>
+                        <div class="game-status">
+                            <span>Particles accelerated: <span id="atom-count">0</span>/5</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="game-feedback" id="game-feedback"></div>
+                    </div>
+                    
+                    <div class="interview-section">
+                        <h4>Exclusive Interview: Life in the Storm</h4>
+                        <div class="dialogue">
+                            <div class="dialogue-bubble">
+                                <p><strong>You:</strong> "Commander Chen, what exactly happens to the station during a solar storm?"</p>
+                            </div>
+                            <div class="dialogue-bubble commander">
+                                <p><strong>Commander Chen:</strong> "The radiation levels spike dramatically. We have to shut down non-essential systems and move to our storm shelter - the most shielded part of the station. Even then, we can feel the effects. The charged particles can damage our electronics and pose serious health risks."</p>
+                            </div>
+                            <div class="dialogue-bubble">
+                                <p><strong>You:</strong> "How do you prepare for these events?"</p>
+                            </div>
+                            <div class="dialogue-bubble commander">
+                                <p><strong>Commander Chen:</strong> "We monitor space weather constantly. When NOAA's Space Weather Prediction Center alerts us to an incoming storm, we have about 15-30 minutes to prepare. We secure loose items, power down sensitive equipment, and get to safety. It's like preparing for a hurricane, but the 'wind' is made of radiation."</p>
+                            </div>
+                        </div>
+                        <button class="next-scene-btn" id="next-scene-1">Continue Investigation</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scene 2: Pilot -->
+            <div id="scene-2" class="story-scene">
+                <div class="scene-header">
+                    <h2>Scene 2: The Pilot</h2>
+                    <div class="scene-progress">2/5</div>
+                </div>
+                <div class="scene-content">
+                    <div class="character-info">
+                        <div class="character-avatar">✈️</div>
+                        <h3>Captain Mike Rodriguez</h3>
+                        <p>Commercial Airline Pilot</p>
+                    </div>
+                    <div class="story-text">
+                        <p>Captain Rodriguez explains how space weather affects aviation and navigation systems.</p>
+                    </div>
+                    <div class="mini-game">
+                        <h4>Mini-Game: Radio Communication</h4>
+                        <p>Re-establish radio communication by connecting frequency lines</p>
+                        <div class="radio-game">
+                            <div class="frequency-lines">
+                                <div class="line" data-line="1"></div>
+                                <div class="line" data-line="2"></div>
+                                <div class="line" data-line="3"></div>
+                                <div class="line" data-line="4"></div>
+                            </div>
+                            <div class="timer">Time: <span id="radio-timer">30</span>s</div>
+                        </div>
+                    </div>
+                    <div class="interview-section">
+                        <h4>Interview with Captain Rodriguez</h4>
+                        <div class="dialogue">
+                            <p><strong>Captain Rodriguez:</strong> "Space weather disrupts our GPS and radio communications. During severe storms, we have to reroute flights and use backup navigation systems."</p>
+                        </div>
+                        <button class="next-scene-btn" id="next-scene-2">Continue</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scene 3: Electrician -->
+            <div id="scene-3" class="story-scene">
+                <div class="scene-header">
+                    <h2>Scene 3: The Electrician</h2>
+                    <div class="scene-progress">3/5</div>
+                </div>
+                <div class="scene-content">
+                    <div class="character-info">
+                        <div class="character-avatar">⚡</div>
+                        <h3>Engineer Lisa Thompson</h3>
+                        <p>Power Grid Engineer</p>
+                    </div>
+                    <div class="story-text">
+                        <p>Engineer Thompson shows you how geomagnetic storms affect power grids and electrical systems.</p>
+                    </div>
+                    <div class="mini-game">
+                        <h4>Mini-Game: Power Grid Restoration</h4>
+                        <p>Balance the power circuits to restore electrical systems</p>
+                        <div class="power-grid">
+                            <div class="circuit" data-circuit="1">
+                                <div class="power-level" style="height: 20%"></div>
+                            </div>
+                            <div class="circuit" data-circuit="2">
+                                <div class="power-level" style="height: 40%"></div>
+                            </div>
+                            <div class="circuit" data-circuit="3">
+                                <div class="power-level" style="height: 60%"></div>
+                            </div>
+                            <div class="circuit" data-circuit="4">
+                                <div class="power-level" style="height: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="timer">Time: <span id="power-timer">45</span>s</div>
+                    </div>
+                    <div class="interview-section">
+                        <h4>Interview with Engineer Thompson</h4>
+                        <div class="dialogue">
+                            <p><strong>Engineer Thompson:</strong> "Geomagnetic storms can induce currents in power lines, causing blackouts and damaging transformers. We monitor space weather to prepare for these events."</p>
+                        </div>
+                        <button class="next-scene-btn" id="next-scene-3">Continue</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scene 4: Farmer -->
+            <div id="scene-4" class="story-scene">
+                <div class="scene-header">
+                    <h2>Scene 4: The Farmer</h2>
+                    <div class="scene-progress">4/5</div>
+                </div>
+                <div class="scene-content">
+                    <div class="character-info">
+                        <div class="character-avatar">🚜</div>
+                        <h3>Farmer John Wilson</h3>
+                        <p>Precision Agriculture</p>
+                    </div>
+                    <div class="story-text">
+                        <p>Farmer Wilson explains how space weather affects modern farming and GPS systems.</p>
+                    </div>
+                    <div class="mini-game">
+                        <h4>Mini-Game: GPS Calibration</h4>
+                        <p>Calibrate the GPS-enabled tractor by aligning satellite signals</p>
+                        <div class="gps-game">
+                            <div class="satellite-signals">
+                                <div class="signal" data-signal="1"></div>
+                                <div class="signal" data-signal="2"></div>
+                                <div class="signal" data-signal="3"></div>
+                                <div class="signal" data-signal="4"></div>
+                            </div>
+                            <div class="tractor">🚜</div>
+                        </div>
+                        <div class="timer">Time: <span id="gps-timer">40</span>s</div>
+                    </div>
+                    <div class="interview-section">
+                        <h4>Interview with Farmer Wilson</h4>
+                        <div class="dialogue">
+                            <p><strong>Farmer Wilson:</strong> "GPS is crucial for precision farming. When space weather disrupts GPS signals, our automated systems can't function properly, affecting crop yields and efficiency."</p>
+                        </div>
+                        <button class="next-scene-btn" id="next-scene-4">Continue</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scene 5: Photographer -->
+            <div id="scene-5" class="story-scene">
+                <div class="scene-header">
+                    <h2>Scene 5: The Photographer</h2>
+                    <div class="scene-progress">5/5</div>
+                </div>
+                <div class="scene-content">
+                    <div class="character-info">
+                        <div class="character-avatar">📸</div>
+                        <h3>Photographer Emma Davis</h3>
+                        <p>Aurora Photographer</p>
+                    </div>
+                    <div class="story-text">
+                        <p>Photographer Davis shows you the beautiful side of space weather - the auroras!</p>
+                    </div>
+                    <div class="mini-game">
+                        <h4>Mini-Game: Aurora Composition</h4>
+                        <p>Arrange NASA aurora photos for the best composition</p>
+                        <div class="aurora-gallery">
+                            <div class="photo-slot" data-slot="1"></div>
+                            <div class="photo-slot" data-slot="2"></div>
+                            <div class="photo-slot" data-slot="3"></div>
+                            <div class="photo-slot" data-slot="4"></div>
+                        </div>
+                        <div class="photo-pool">
+                            <div class="aurora-photo" data-photo="1">Aurora 1</div>
+                            <div class="aurora-photo" data-photo="2">Aurora 2</div>
+                            <div class="aurora-photo" data-photo="3">Aurora 3</div>
+                            <div class="aurora-photo" data-photo="4">Aurora 4</div>
+                        </div>
+                    </div>
+                    <div class="interview-section">
+                        <h4>Interview with Photographer Davis</h4>
+                        <div class="dialogue">
+                            <p><strong>Photographer Davis:</strong> "Space weather creates the most beautiful auroras! These lights are caused by charged particles from the Sun interacting with Earth's magnetic field."</p>
+                        </div>
+                        <button class="next-scene-btn" id="next-scene-5">Continue to Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="nebula"></div>
+            </div>
+            <div class="quiz-content">
+                <h2>Space Weather Quiz</h2>
+                <div class="quiz-info">
+                    <p>Test your knowledge based on what you've learned!</p>
+                    <div class="quiz-timer">Time: <span id="quiz-timer">300</span>s</div>
+                </div>
+                <div class="quiz-container">
+                    <div class="question-counter">Question <span id="current-question">1</span> of 10</div>
+                    <div class="question" id="question-text"></div>
+                    <div class="answers" id="answers-container"></div>
+                    <button class="next-question-btn" id="next-question" disabled>Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="nebula"></div>
+                <div class="galaxy"></div>
+            </div>
+            <div class="results-content">
+                <h2>Mission Complete!</h2>
+                <div class="score-display">
+                    <h3>Your Score: <span id="final-score">0</span>/10</h3>
+                    <div class="score-message" id="score-message"></div>
+                </div>
+                <div class="certificate-section">
+                    <h3>Download Your Certificate</h3>
+                    <p>Congratulations, <span id="player-name-display"></span>!</p>
+                    <button class="download-certificate" id="download-cert">Download Certificate</button>
+                </div>
+                <button class="restart-game" id="restart-game">Play Again</button>
+            </div>
+        </div>
+
+        <!-- Directory Screen -->
+        <div id="directory-screen" class="screen">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="nebula"></div>
+            </div>
+            <div class="directory-content">
+                <h2>Your Directory</h2>
+                <p>All information you've collected during your investigation:</p>
+                <div class="directory-items" id="directory-items">
+                    <!-- Dynamic content will be added here -->
+                </div>
+                <button class="back-to-game" id="back-to-game">Back to Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification" id="notification">
+        <span class="notification-text"></span>
+    </div>
+
+    <script src="game-script.js"></script>
+</body>
+</html>
